@@ -1,0 +1,77 @@
+body {
+  font-family: 'Ubuntu Mono', sans-serif;
+  margin: 0;
+  background-color: #222;
+}
+
+#top_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #444;
+  color: #ccc;
+}
+
+#content {
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: #555;
+  height: 100%;
+  padding: 100px;
+}
+
+a {
+  display: block;
+  color: #ccc;
+}
+
+.private::after {
+  content: ' 🔒';
+  text-decoration: none;
+}
+
+.comic {
+  position: relative;
+}
+
+.comic > img {
+  position: absolute;
+  bottom: -6em;
+  left: -200px;
+  max-height: 200px;
+  max-width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms;
+}
+
+.comic:hover > img:first-child {
+  opacity: .8;
+}
+
+.titles {
+  text-decoration: none;
+}
+
+.titles > span {
+  font-size: 0em;
+  transition: font-size 200ms;
+}
+
+.titles:hover > span {
+  font-size: 1em;
+}
+
+.titles > span:first-child {
+  font-size: 2em;
+}
+
+.titles > span:not(:first-child)::before {
+  content: ', ';
+}
+
+#edit {
+  width: 100%;
+}
